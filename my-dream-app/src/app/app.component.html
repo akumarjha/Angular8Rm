@@ -1,0 +1,36 @@
+<h1 [ngStyle]="applyStyle()">Hello {{name}}</h1>
+<input bind-id="myId" type="text" value="Ashutosh"><br>
+<button [class.boldStyleClass] ='applyBoldStyleClass' >Save</button>
+<br><br><br>
+<button [ngClass] ='addStyleClasses()' >bold+oblique</button>
+<br><br><br>
+<button (click)="onClick()">Click</button>
+<br><br><br>
+{{message}}
+<br><br>
+<input type="text" [(ngModel)] ="txtName">
+&nbsp;&nbsp;
+{{txtName}}
+<br><br>
+<div>
+  {{Heading}}
+  <my-student></my-student>
+  <app-test [parentName] ="pName"></app-test> 
+</div>
+<div>
+  your text: <input type="text" [(ngModel)] ='txtLifeCycleHooks'/>
+  <br><br>
+  <app-simple [parenttxtLifeCycleHooks] ="txtLifeCycleHooks"></app-simple>
+</div>
+
+<h4>Student details using Angular Services</h4>
+<app-studentlist></app-studentlist>
+
+<div style="padding: 5px;">
+<ul>
+  <li><a routerLink ='home'>Home</a></li>
+  <li><a routerLink ='students'>Students</a></li>
+</ul>
+<router-outlet></router-outlet>  <!-- to identify the above link which links gets triggered -->
+</div>
+<button class="btn btn-danger">Bootstrap button</button>

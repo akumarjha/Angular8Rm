@@ -1,0 +1,49 @@
+<table>
+    <th>
+        <tr class="header">
+            <td>Label</td>
+            <td>Value</td>
+        </tr>
+        <tr>
+            <td>First Name</td>
+            <td>{{firstName}}</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>{{lastName}}</td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>{{gender}}</td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td>{{age}}</td>
+        </tr>
+    </th>
+</table>
+<br><br>
+{{ngForHeader}}
+<div *ngFor="let name of names; index as i">{{i}}  {{name}}</div>
+<br><br>
+{{ngSwitchHeader}}
+<div [ngSwitch]="fruit">
+    <div *ngSwitchCase="'orange'">you like orange fruit</div>
+    <div *ngSwitchCase="'apple'">you like apple fruit</div>
+    <div *ngSwitchDefault>select again</div>
+</div>
+<br><br>
+
+{{ngIfHeader}}
+<br><br>
+<button (click) ="toggleSwitch()">toggleSwitch</button>
+&nbsp;&nbsp;
+<div *ngIf = "switchBulb; then switchOn else switchOff"></div>
+<ng-template #switchOn>bulb is switched on</ng-template>
+<ng-template #switchOff>bulb is switched off</ng-template>
+<br>
+<div>{{pipeExample}}</div>
+<div>Converted to upper case using pipe(|) {{pipeExample | uppercase}}</div>
+<div>Dob full date is {{dob | date:'fullDate' | uppercase}}</div>
+<div>Dob full date is {{dob | date:'MM/dd/yyyy'}}</div>
+<div>Amount is {{amount | currency:'INR':'symbol'}}</div>
